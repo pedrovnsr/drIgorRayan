@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { MessageCircle } from 'lucide-react';
-import heroImg from './drigor-hero.jpg';
+import heroBg from './hero-bg.jpg';
 import logoImg from './logo.png';
+import imagemMobile from './imagem-mobile.jpg';
 
 const WA_LINK = 'https://wa.me/5588997197561?text=Olá%20Dr.%20Igor%2C%20gostaria%20de%20agendar%20uma%20consulta.';
 
@@ -15,6 +16,15 @@ export default function Hero() {
 
   return (
     <section id="inicio" className="relative min-h-screen flex flex-col justify-center pt-20 overflow-hidden">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat" 
+        style={{ backgroundImage: `url(${heroBg})` }}
+      />
+
+      {/* Dark overlay film to improve text readability */}
+      <div className="absolute inset-0 z-0 bg-dark-950/70 lg:bg-dark-950/40" />
+
       {/* Background gradients */}
       <div className="absolute inset-0 pointer-events-none z-0">
         <div className="absolute top-[-20%] right-[-10%] w-[70vw] h-[70vw] rounded-full bg-gold-500/10 blur-[120px]" />
@@ -29,7 +39,12 @@ export default function Hero() {
           <div className="flex flex-col items-start text-left">
             {/* Logo */}
             <div className={`transition-all duration-700 delay-100 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
-              <img src={logoImg} alt="Dr. Igor Rayan Logo" className="h-16 sm:h-20 md:h-24 mb-10 object-contain drop-shadow-lg" />
+              <img src={logoImg} alt="Dr. Igor Rayan Logo" className="h-16 sm:h-20 md:h-24 mb-6 lg:mb-10 object-contain drop-shadow-lg" />
+            </div>
+
+            {/* Mobile Image */}
+            <div className={`block lg:hidden w-full transition-all duration-700 delay-150 mb-8 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
+              <img src={imagemMobile} alt="Dr. Igor" className="w-full max-w-sm h-auto rounded-2xl shadow-2xl object-cover" />
             </div>
 
             {/* Badge */}
@@ -99,16 +114,6 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right image area */}
-          <div
-            className={`hidden lg:flex justify-center items-end h-full transition-all duration-1000 delay-500 ${visible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}
-          >
-            <img
-              src={heroImg}
-              alt="Dr. Igor Rayan"
-              className="max-h-[850px] w-auto object-contain"
-            />
-          </div>
         </div>
       </div>
     </section>
