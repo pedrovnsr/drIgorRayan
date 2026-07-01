@@ -30,7 +30,7 @@ function useScrollReveal() {
   }, [])
 }
 
-export default function App() {
+export default function App() { 
   useScrollReveal()
 
   return (
