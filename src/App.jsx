@@ -6,6 +6,7 @@ import Differentials from './components/Differentials'
 import Testimonials from './components/Testimonials'
 import FAQ from './components/FAQ'
 import CTA from './components/CTA'
+import Locations from './components/Locations'
 import Footer from './components/Footer'
 import WhatsAppFloat from './components/WhatsAppFloat'
 
@@ -42,6 +43,7 @@ export default function App() {
       <Testimonials />
       <FAQ />
       <CTA />
+      <Locations />
       <Footer />
       <WhatsAppFloat />
     </div>
