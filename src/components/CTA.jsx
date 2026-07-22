@@ -1,6 +1,6 @@
 import { MessageCircle, ArrowRight, HelpCircle, MapPin } from 'lucide-react'
 
-const LINK_AGENDAR = 'https://wa.me/5588997197561?text=Olá%20Dr.%20Igor%2C%20gostaria%20de%20agendar%20uma%20consulta.'
+const LINK_AGENDAR = 'https://wa.me/5587981307483?text=Olá%20Dr.%20Igor%2C%20gostaria%20de%20agendar%20uma%20consulta.'
 const LINK_DUVIDA = 'https://wa.me/5587981307483?text=Olá%2C%20já%20sou%20paciente%20e%20gostaria%20de%20tirar%20uma%20dúvida.'
 const LINK_CLINIMASTER = 'https://wa.me/5588993492054?text=Olá%2C%20gostaria%20de%20marcar%20uma%20consulta%20na%20Clinimaster%20Cariri.'
 

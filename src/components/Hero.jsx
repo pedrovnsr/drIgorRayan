@@ -4,7 +4,7 @@ import heroBg from './hero-bg.jpg';
 import logoImg from './logo.png';
 import imagemMobile from './imagem-mobile.jpg';
 
-const WA_LINK = 'https://wa.me/5588997197561?text=Olá%20Dr.%20Igor%2C%20gostaria%20de%20agendar%20uma%20consulta.';
+const WA_LINK = 'https://wa.me/5587981307483?text=Olá%20Dr.%20Igor%2C%20gostaria%20de%20agendar%20uma%20consulta.';
 
 export default function Hero() {
   const [visible, setVisible] = useState(false);

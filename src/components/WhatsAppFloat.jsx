@@ -1,6 +1,6 @@
 import { MessageCircle } from 'lucide-react'
 
-const WA_LINK = 'https://wa.me/5588997197561?text=Olá%20Dr.%20Igor%2C%20gostaria%20de%20agendar%20uma%20consulta.'
+const WA_LINK = 'https://wa.me/5587981307483?text=Olá%20Dr.%20Igor%2C%20gostaria%20de%20agendar%20uma%20consulta.'
 
 export default function WhatsAppFloat() {
   return (

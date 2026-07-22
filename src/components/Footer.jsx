@@ -1,7 +1,7 @@
 import { MessageCircle, Instagram, Heart } from 'lucide-react'
 import logoImg from './logo.png'
 
-const WA_LINK = 'https://wa.me/5588997197561?text=Olá%20Dr.%20Igor%2C%20gostaria%20de%20agendar%20uma%20consulta.'
+const WA_LINK = 'https://wa.me/5587981307483?text=Olá%20Dr.%20Igor%2C%20gostaria%20de%20agendar%20uma%20consulta.'
 const IG_LINK = 'https://instagram.com/drigorayan'
 
 export default function Footer() {
@@ -57,7 +57,7 @@ export default function Footer() {
                 </div>
                 <div>
                   <p className="text-xs text-dark-600 font-body uppercase tracking-wider">WhatsApp</p>
-                  <p className="text-sm font-body">(88) 99719-7561</p>
+                  <p className="text-sm font-body">(87) 98130-7483</p>
                 </div>
               </a>
 
