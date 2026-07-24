@@ -53,7 +53,7 @@ const aestheticServices = [
     title: 'Reposição Hormonal com Implantes',
     subtitle: 'Precisão, segurança e personalização.',
     description:
-      'Há mais de 5 anos atuando com implantes hormonais. A reposição hormonal é um pilar da saúde, longevidade e qualidade de vida. Os implantes subcutâneos liberam hormônios de forma contínua e controlada, evitando picos e quedas. Uma abordagem segura e eficaz para recuperar energia, libido, qualidade do sono e composição corporal.',
+      'Há mais de 10 anos atuando com implantes hormonais. A reposição hormonal é um pilar da saúde, longevidade e qualidade de vida. Os implantes subcutâneos liberam hormônios de forma contínua e controlada, evitando picos e quedas. Uma abordagem segura e eficaz para recuperar energia, libido, qualidade do sono e composição corporal.',
     highlights: ['Liberação hormonal contínua', 'Mais energia e disposição', 'Recuperação da libido', 'Segurança e individualização'],
     extraContent: {
       paragraphs: [
