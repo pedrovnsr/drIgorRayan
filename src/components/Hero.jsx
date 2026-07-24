@@ -102,7 +102,7 @@ export default function Hero() {
               {[
                 { value: 'ABH', label: 'Associação Brasileira\nde Hormonologia' },
                 { value: '100%', label: 'Protocolos\nPersonalizados' },
-                { value: '3', label: 'Serviços\nEspecializados' },
+                { value: '4', label: 'Serviços\nEspecializados' },
               ].map((stat) => (
                 <div key={stat.value} className="text-left">
                   <p className="font-display text-3xl font-semibold text-gradient">{stat.value}</p>

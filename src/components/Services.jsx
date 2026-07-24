@@ -1,48 +1,78 @@
 import { useState } from 'react'
-import { ChevronDown, MessageCircle, Zap, Flame, Activity } from 'lucide-react'
+import { ChevronDown, MessageCircle, Zap, Flame, Activity, Shield } from 'lucide-react'
 
 const WA_LINK = 'https://wa.me/5587981307483?text=Olá%20Dr.%20Igor%2C%20gostaria%20de%20agendar%20uma%20consulta.'
 
-const services = [
+const healthServices = [
   {
     id: 'protocolo-ir',
     icon: Flame,
     tag: 'Emagrecimento',
     title: 'Protocolo IR de Emagrecimento',
-    subtitle: 'Resultado real. Método exclusivo.',
+    subtitle: 'O foco não é apenas perder peso, é reprogramar seu metabolismo.',
     description:
-      'O Protocolo IR é um método exclusivo de emagrecimento desenvolvido com base na resistência à insulina e no comportamento metabólico de cada paciente. Diferente de dietas convencionais, este protocolo atua na raiz do problema, regulando hormônios, otimizando o metabolismo e promovendo perda de gordura de forma consistente e duradoura. Ideal para quem já tentou emagrecer e não conseguiu resultados sustentáveis.',
-    highlights: ['Avaliação metabólica completa', 'Protocolo 100% personalizado', 'Acompanhamento contínuo', 'Resultados sustentáveis'],
+      'Um método exclusivo desenvolvido ao longo dos anos de prática clínica, baseado em artigos científicos recentes e em resultados reais. Este protocolo vai muito além de "dietas prontas". Cada decisão é tomada com base no seu organismo, estilo de vida e objetivo final, integrando ajustes hormonais, estratégias nutricionais e uso criterioso de medicações quando indicado.',
+    highlights: ['Avaliação metabólica completa', 'Ajuste hormonal', 'Correção nutricional', 'Acompanhamento contínuo'],
     gradient: 'from-orange-500/10 to-gold-500/5',
     color: 'text-orange-400',
     bg: 'bg-orange-500/10',
   },
   {
+    id: 'hipertrofia',
+    icon: Activity,
+    tag: 'Hipertrofia',
+    title: 'Protocolo IR de Hipertrofia Muscular',
+    subtitle: 'Aqui, não existe "achismo". Existe método.',
+    description:
+      'Desenvolvido para pacientes que desejam ganhar massa muscular com estratégia, eficiência e respaldo científico. A partir de uma análise completa da sua rotina e exames, estruturamos um plano individualizado que otimiza o ganho de massa, a redução de gordura simultânea e a performance física. O objetivo é fazer seu corpo evoluir de forma inteligente, respeitando sua fisiologia.',
+    highlights: ['Avaliação da rotina de treinos', 'Ajustes de suplementação', 'Avaliação por bioimpedância', 'Análise de exames'],
+    gradient: 'from-blue-500/10 to-gold-500/5',
+    color: 'text-blue-400',
+    bg: 'bg-blue-500/10',
+  }
+]
+
+const aestheticServices = [
+  {
     id: 'endolaser',
     icon: Zap,
     tag: 'Estética Corporal',
     title: 'Endolaser',
-    subtitle: 'Tecnologia de ponta em estética corporal.',
+    subtitle: 'Mais do que estética, uma transformação completa.',
     description:
-      'O Endolaser é uma tecnologia moderna de estética corporal que atua na destruição de células de gordura localizada, melhora da flacidez e remodelamento corporal. Com laser de baixa frequência, o tratamento é não invasivo, seguro e com recuperação imediata. Resultados visíveis já nas primeiras sessões, com programa individualizado de acordo com os objetivos de cada paciente.',
-    highlights: ['Não invasivo e seguro', 'Sem tempo de recuperação', 'Remodelamento corporal', 'Sessões personalizadas'],
-    gradient: 'from-blue-500/10 to-gold-500/5',
-    color: 'text-blue-400',
-    bg: 'bg-blue-500/10',
-  },
-  {
-    id: 'hormonal',
-    icon: Activity,
-    tag: 'Hormonologia',
-    title: 'Reposição Hormonal com Implantes Subcutâneos',
-    subtitle: 'Equilíbrio que transforma a vida.',
-    description:
-      'A reposição hormonal com implantes subcutâneos é uma das abordagens mais avançadas para restaurar o equilíbrio hormonal de forma estável e prolongada. Os implantes liberam hormônios de forma contínua, evitando os picos e vales comuns de outros métodos. Indicado para homens e mulheres que apresentam sintomas de deficiência hormonal como fadiga, ganho de peso, queda de libido, dificuldade de concentração e alterações de humor.',
-    highlights: ['Liberação hormonal contínua', 'Associação Brasileira de Hormonologia', 'Para homens e mulheres', 'Duração prolongada'],
+      'Procedimento moderno e minimamente invasivo para tratar gordura localizada e flacidez de forma eficaz. O laser é aplicado sob a pele através de uma microfibra, promovendo a quebra das células de gordura, estímulo intenso de colágeno e retração da pele. Ideal para quem busca definição corporal sem procedimentos agressivos, com recuperação rápida e resultados naturais.',
+    highlights: ['Procedimento ambulatorial', 'Praticamente indolor', 'Recuperação rápida', 'Resultados progressivos'],
     gradient: 'from-purple-500/10 to-gold-500/5',
     color: 'text-purple-400',
     bg: 'bg-purple-500/10',
   },
+  {
+    id: 'hormonal',
+    icon: Shield,
+    tag: 'Hormonologia',
+    title: 'Reposição Hormonal com Implantes',
+    subtitle: 'Precisão, segurança e personalização.',
+    description:
+      'Há mais de 5 anos atuando com implantes hormonais. A reposição hormonal é um pilar da saúde, longevidade e qualidade de vida. Os implantes subcutâneos liberam hormônios de forma contínua e controlada, evitando picos e quedas. Uma abordagem segura e eficaz para recuperar energia, libido, qualidade do sono e composição corporal.',
+    highlights: ['Liberação hormonal contínua', 'Mais energia e disposição', 'Recuperação da libido', 'Segurança e individualização'],
+    extraContent: {
+      paragraphs: [
+        'Mulheres na menopausa voltam a se sentir vivas, equilibradas e confiantes.',
+        'Homens com baixa testosterona retomam sua performance, vitalidade e bem-estar.'
+      ],
+      emphasisTitle: 'Segurança e individualização:',
+      emphasisSubtitle: 'Cada implante é indicado com base em:',
+      topics: [
+        'Avaliação clínica detalhada',
+        'Exames laboratoriais completos',
+        'Objetivos individuais do paciente'
+      ],
+      finalText: 'Aqui, a reposição hormonal não é padronizada ela é precisa, segura e personalizada.'
+    },
+    gradient: 'from-emerald-500/10 to-gold-500/5',
+    color: 'text-emerald-400',
+    bg: 'bg-emerald-500/10',
+  }
 ]
 
 function ServiceCard({ service, isOpen, onToggle }) {
@@ -100,6 +130,33 @@ function ServiceCard({ service, isOpen, onToggle }) {
             ))}
           </div>
 
+          {service.extraContent && (
+            <div className="mb-8 border-t border-white/5 pt-6">
+              {service.extraContent.paragraphs.map((p, i) => (
+                <p key={i} className="text-dark-300 font-body text-base leading-relaxed font-light mb-4">
+                  {p}
+                </p>
+              ))}
+              
+              <div className="mt-6 mb-6">
+                <p className="text-gold-400 font-medium text-base mb-1">{service.extraContent.emphasisTitle}</p>
+                <p className="text-dark-300 text-base font-light mb-4">{service.extraContent.emphasisSubtitle}</p>
+                <ul className="space-y-3 mb-6 pl-1">
+                  {service.extraContent.topics.map((t, i) => (
+                     <li key={i} className="flex items-center gap-2.5">
+                       <div className="w-1.5 h-1.5 rounded-full bg-gold-400 flex-shrink-0" />
+                       <span className="text-dark-300 text-sm font-body">{t}</span>
+                     </li>
+                  ))}
+                </ul>
+              </div>
+              
+              <p className="text-dark-100 font-medium font-body text-base italic border-l-2 border-gold-500/40 pl-4 py-1">
+                {service.extraContent.finalText}
+              </p>
+            </div>
+          )}
+
           <a
             href={WA_LINK}
             target="_blank"
@@ -135,13 +192,32 @@ export default function Services() {
             <em className="text-gradient not-italic">transformam</em>
           </h2>
           <p className="mt-5 text-dark-400 font-body text-lg leading-relaxed font-light max-w-2xl mx-auto">
-            Cada serviço é oferecido com protocolo personalizado, acompanhamento próximo e foco em resultados reais e duradouros.
+            No consultório, cada paciente é avaliado de forma individualizada, com base em ciência atual, experiência clínica e resultados reais. Meu objetivo não é apenas tratar é transformar o seu corpo e a sua saúde de forma estratégica, segura e duradoura.
           </p>
         </div>
 
         {/* Accordion */}
         <div className="section-reveal flex flex-col gap-4">
-          {services.map((service) => (
+          {healthServices.map((service) => (
+            <ServiceCard
+              key={service.id}
+              service={service}
+              isOpen={openId === service.id}
+              onToggle={() => setOpenId(openId === service.id ? null : service.id)}
+            />
+          ))}
+
+          <div className="mt-12 mb-6 text-center section-reveal">
+            <h3 className="font-display text-2xl md:text-3xl font-semibold text-dark-100 mb-3">
+              Estética Corporal
+            </h3>
+            <p className="text-dark-300 font-body text-base md:text-lg leading-relaxed font-light max-w-2xl mx-auto">
+              A estética corporal no consultório é tratada com a mesma seriedade da saúde: com tecnologia, precisão e segurança.<br className="hidden md:block"/>
+              <span className="mt-2 block text-dark-400">Entre os principais procedimentos, destaca-se:</span>
+            </p>
+          </div>
+
+          {aestheticServices.map((service) => (
             <ServiceCard
               key={service.id}
               service={service}
